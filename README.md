@@ -3,11 +3,11 @@ Practical Lab Two, WebGIS
 
 
 
-## ArcGIS Online Developers: Create a new empty layer
+### ArcGIS Online Developers: Create a new empty layer
 
-[x] https://fleming.maps.arcgis.com/home/item.html?id=9297ee376a94470db088cf7ef8492e0c
-[x] https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/trees/FeatureServer?token=
-[x] https://developers.arcgis.com/layers/9297ee376a94470db088cf7ef8492e0c
+- https://fleming.maps.arcgis.com/home/item.html?id=9297ee376a94470db088cf7ef8492e0c
+- https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/trees/FeatureServer?token=
+- https://developers.arcgis.com/layers/9297ee376a94470db088cf7ef8492e0c
 
 
 Tutorial 1: Display a map
