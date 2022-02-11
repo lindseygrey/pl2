@@ -60,10 +60,9 @@
         content: "{Description}"
  }
         const attributes = {
-        Name: "Graphic",
-        Description: "Site of St Valentines beheading"
+        Name: "Piazza del Popolo",
+        Description: "Supposed site of St Valentines beheading, in the third century"
  } 
-        
         
          const pointGraphic = new Graphic({
          geometry: point,
@@ -72,6 +71,25 @@
          popupTemplate: popupTemplate
           });
           graphicsLayer.add(pointGraphic);
+
+         const point2 = { //Create a point
+         type: "point",
+         longitude: 12.472911,
+         latitude: 41.924586
+          };
+        
+        const attributes2 = {
+        Name: "Catacombs of San Valentino",
+        Description: "Site of St Valentines relics"
+ } 
+        
+         const pointGraphic2 = new Graphic({
+         geometry: point2,
+         symbol: simpleMarkerSymbol,
+         attributes: attributes2,
+         popupTemplate: popupTemplate
+          });
+        graphicsLayer.add(pointGraphic2);
 
       });
     </script>
