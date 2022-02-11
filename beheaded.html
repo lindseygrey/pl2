@@ -54,11 +54,7 @@
           width: 1
          }
         };
-         const pointGraphic = new Graphic({
-         geometry: point,
-         symbol: simpleMarkerSymbol
-          });
-          graphicsLayer.add(pointGraphic);
+        
         const popupTemplate = {
         title: "{Name}",
         content: "{Description}"
@@ -66,7 +62,17 @@
         const attributes = {
         Name: "Graphic",
         Description: "Site of St Valentines beheading"
- }
+ } 
+        
+        
+         const pointGraphic = new Graphic({
+         geometry: point,
+         symbol: simpleMarkerSymbol
+         attributes: attributes,
+         popupTemplate: popupTemplate
+          });
+          graphicsLayer.add(pointGraphic);
+
       });
     </script>
   </head>
