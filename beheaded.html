@@ -18,7 +18,13 @@
     <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.22/"></script>
     <script>
-      require(["esri/config","esri/Map", "esri/views/MapView"], function (esriConfig,Map, MapView) {
+      require([
+        "esri/config","esri/Map", 
+        "esri/views/MapView",
+        "esri/Graphic",
+        "esri/layers/GraphicsLayer"
+        ], function (esriConfig,Map, MapView) {
+        
         esriConfig.apiKey = "AAPKb7fd7d5cf12f4a65ad63cdef1255e5be28Ax_PpxkDP8EeBPex0s4fPuRbtY7eys0GQ7y-H7iSTiPID4ZerBaJSUiaqT82PV";
 
         const map = new Map({
@@ -31,6 +37,36 @@
           zoom: 13, // Zoom level
           container: "viewDiv" // Div element
         });
+        
+        const graphicsLayer = new GraphicsLayer();
+        map.add(graphicsLayer);
+        
+         const point = { //Create a point
+         type: "point",
+         longitude: 12.476221,
+         latitude: 41.910755
+          };
+        const simpleMarkerSymbol = {
+          type: "simple-marker",
+          color: [226, 119, 40],  // Orange
+          outline: {
+          color: [255, 255, 255], // White
+          width: 1
+         }
+        };
+         const pointGraphic = new Graphic({
+         geometry: point,
+         symbol: simpleMarkerSymbol
+          });
+          graphicsLayer.add(pointGraphic);
+        const popupTemplate = {
+        title: "{Name}",
+        content: "{Description}"
+ }
+        const attributes = {
+        Name: "Graphic",
+        Description: "I am a polygon"
+ }
       });
     </script>
   </head>
