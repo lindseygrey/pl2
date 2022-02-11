@@ -17,3 +17,12 @@ Link: https://lindseygrey.github.io/pl2/display.html
 Tutorial 2: Add a point, line, and polygon
 
 Link: https://lindseygrey.github.io/pl2/pointlinepolygon.html
+
+Tutorial 3: Popups
+
+Link: https://lindseygrey.github.io/pl2/popup.html
+
+
+Final Map: Beheading of St Valentine
+
+Link: https://lindseygrey.github.io/pl2/beheaded.html
