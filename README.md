@@ -11,7 +11,9 @@ Practical Lab Two, WebGIS
 
 
 Tutorial 1: Display a map
+
 Link: https://lindseygrey.github.io/pl2/display.html
 
 Tutorial 2: Add a point, line, and polygon
+
 Link: https://lindseygrey.github.io/pl2/pointlinepolygon.html
