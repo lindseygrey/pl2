@@ -18,3 +18,6 @@ https://developers.arcgis.com/layers/9297ee376a94470db088cf7ef8492e0c
 
 Tutorial 1: Display a map
 Link: https://lindseygrey.github.io/pl2/display.html
+
+Tutorial 2: Add a point, line, and polygon
+Link: https://lindseygrey.github.io/pl2/pointlinepolygon.html
