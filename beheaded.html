@@ -32,6 +32,7 @@
           line-height: 18px;
         }
     </style>
+
     <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
     <script src="https://js.arcgis.com/4.22/"></script>
     <script>
@@ -51,21 +52,21 @@
         const view = new MapView({
           map: map,
           center: [12.476221, 41.910755], // Longitude, latitude
-          zoom: 13, // Zoom level
+          zoom: 12, // Zoom level
           container: "viewDiv" // Div element
         });
         
         const graphicsLayer = new GraphicsLayer();
         map.add(graphicsLayer);
         
-         const point = { //Create a point
+         const point = { //Create First Point
          type: "point",
          longitude: 12.476221,
          latitude: 41.910755
           };
         const simpleMarkerSymbol = {
           type: "simple-marker",
-          color: [226, 119, 40],  // Orange
+          color: [255, 105, 180],  // PINK, you know, for VALINTINES DAY
           outline: {
           color: [255, 255, 255], // White
           width: 1
@@ -89,7 +90,7 @@
           });
           graphicsLayer.add(pointGraphic);
 
-         const point2 = { //Create a point
+         const point2 = { //Create second point
          type: "point",
          longitude: 12.472911,
          latitude: 41.924586
@@ -107,6 +108,25 @@
          popupTemplate: popupTemplate
           });
         graphicsLayer.add(pointGraphic2);
+        
+        const point3 = { //Create third point
+         type: "point",
+         longitude: 12.481444,
+         latitude: 41.888179
+          };
+        
+        const attributes3 = {
+        Name: "Santa Maria in Cosmedin",
+        Description: "St. Valentines skull is displayed here, with a flower crown"
+ } 
+        
+         const pointGraphic3 = new Graphic({
+         geometry: point3,
+         symbol: simpleMarkerSymbol,
+         attributes: attributes3,
+         popupTemplate: popupTemplate
+          });
+        graphicsLayer.add(pointGraphic3);
 
       });
     </script>
@@ -115,7 +135,7 @@
     <div id="title">
       <h1> Beheading of St. Valentine </h1>
       <div id="subtext">
-        <p>Blah Blah Blah</p>
+        <p> St. Valentine was a 3rd century Roman saint whose feast day is Febuary 14th and is associted with </p>
       </div>
     </div>
     <div id="viewDiv"></div>
