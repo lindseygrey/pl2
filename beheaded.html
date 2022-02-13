@@ -172,7 +172,11 @@
           });
         graphicsLayer.add(pointGraphic4);
       
+        const parksLayer = new FeatureLayer({
+    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
+  });
 
+  map.add(parksLayer, 0);
         const HeartLayer = new FeatureLayer({
     url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/heart/FeatureServer/0"
   });
