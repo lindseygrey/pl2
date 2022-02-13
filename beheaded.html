@@ -13,6 +13,29 @@
         height: 100%;
         width: 100%;
       }
+      #pinkmap{
+        background-color: rgba(253, 185, 200, 0.25);
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #title{
+          position: absolute;
+          top: 50px;
+          left: 12%;
+          z-index: 5;
+          background-color: rgba(253, 185, 200, 0.5);
+          border-radius: 20px;
+          color: rgb(86, 86, 86);
+          padding: 15px;
+          text-align: center;
+          font-family: "Lucida Handwriting", Times, serif;
+          line-height: 30px;
+          padding-left: 15px;
+          max-width: 500px;
+        }
       #title{
           position: absolute;
           top: 50px;
@@ -98,7 +121,7 @@
         
         const attributes2 = {
         Name: "Catacombs of San Valentino",
-        Description: "Site of St Valentines relics"
+        Description: "Orginal site of St Valentines relics, later moved to Santa Prassede"
  } 
         
          const pointGraphic2 = new Graphic({
@@ -126,18 +149,39 @@
          attributes: attributes3,
          popupTemplate: popupTemplate
           });
+
         graphicsLayer.add(pointGraphic3);
 
+        const point4 = { //Create fourth point
+         type: "point",
+         longitude: 12.498715,
+         latitude: 41.896450
+          };
+        
+        const attributes4 = {
+        Name: "Santa Prassede",
+        Description: "Site of St. Valentine Relics"
+ } 
+        
+         const pointGraphic4 = new Graphic({
+         geometry: point4,
+         symbol: simpleMarkerSymbol,
+         attributes: attributes4,
+         popupTemplate: popupTemplate
+          });
+        graphicsLayer.add(pointGraphic4);
       });
     </script>
   </head>
   <body>
+    <div id = "pinkmap">
     <div id="title">
       <h1> Beheading of St. Valentine </h1>
       <div id="subtext">
-        <p> St. Valentine was a 3rd century Roman saint whose feast day is Febuary 14th and is associted with </p>
+        <p> St. Valentine was a 3rd century Roman saint whose feast day is Febuary 14th and is associted with courtly love. Many different accounts exist about his life and martyring, but it generally agreed that he was beheaded by the Roman Government for evangalizing and conducting christian marriages in secret. Today, his remains (allegedly) are scattered across churches in Rome, and in one church in Ireland. </p>
       </div>
     </div>
+  </div>
     <div id="viewDiv"></div>
   </body>
 </html>
