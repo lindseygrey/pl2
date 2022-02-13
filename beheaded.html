@@ -172,13 +172,21 @@
           });
         graphicsLayer.add(pointGraphic4);
       
-        const parksLayer = new FeatureLayer({
-    url: "https://services3.arcgis.com/GVgbJbqm8hXASVYi/arcgis/rest/services/Parks_and_Open_Space/FeatureServer/0"
-  });
-
-  map.add(parksLayer, 0);
+        let pinkheart = {
+          type: "simple",  // autocasts as new SimpleRenderer()
+          symbol: {
+          type: "simple-fill",  // autocasts as new SimpleFillSymbol()
+          color: [ 255, 128, 0, 0.5 ],
+          outline: {  // autocasts as new SimpleLineSymbol()
+          width: 1,
+          color: "white"
+    }
+  }
+};
+ 
         const HeartLayer = new FeatureLayer({
-    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/heart/FeatureServer/0"
+    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/heart/FeatureServer/0",
+    renderer: pinkheart
   });
         map.add(HeartLayer, 0);
 
