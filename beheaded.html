@@ -63,7 +63,8 @@
         "esri/config","esri/Map", 
         "esri/views/MapView",
         "esri/Graphic",
-        "esri/layers/GraphicsLayer"
+        "esri/layers/GraphicsLayer",
+        "esri/layers/FeatureLayer"
         ], function (esriConfig,Map, MapView, Graphic, GraphicsLayer) {
         
         esriConfig.apiKey = "AAPKb7fd7d5cf12f4a65ad63cdef1255e5be28Ax_PpxkDP8EeBPex0s4fPuRbtY7eys0GQ7y-H7iSTiPID4ZerBaJSUiaqT82PV";
@@ -172,33 +173,10 @@
         graphicsLayer.add(pointGraphic4);
       
 
-      const polygon = {
-    type: "polygon",
-    rings: [
-        [-118.818984489994, 34.0137559967283], //Longitude, latitude
-        [-118.806796597377, 34.0215816298725], //Longitude, latitude
-        [-118.791432890735, 34.0163883241613], //Longitude, latitude
-        [-118.79596686535, 34.008564864635],   //Longitude, latitude
-        [-118.808558110679, 34.0035027131376]  //Longitude, latitude
-    ]
- };
-
- const simpleFillSymbol = {
-    type: "simple-fill",
-    color: [227, 139, 79, 0.8],  // Orange, opacity 80%
-    outline: {
-        color: [255, 255, 255],
-        width: 1
-    }
- };
-
- const polygonGraphic = new Graphic({
-    geometry: polygon,
-    symbol: simpleFillSymbol,
-
- });
- graphicsLayer.add(polygonGraphic);
-
+        const HeartLayer = new FeatureLayer({
+    url: "https://services1.arcgis.com/pMeXRvgWClLJZr3s/arcgis/rest/services/heart/FeatureServer"
+  });
+        map.add(HeartLayer, 0);
 
 });
     </script>
@@ -208,11 +186,13 @@
     <div id="title">
       <h1> Beheading of St. Valentine </h1>
       <div id="subtext">
+        <div id = "pinkmap">
         <p> St. Valentine was a 3rd century Roman saint whose feast day is Febuary 14th and is associted with courtly love. Many different accounts exist about his life and martyring, but it generally agreed that he was beheaded by the Roman Government for evangalizing and conducting christian marriages in secret. Today, his remains (allegedly) are scattered across churches in Rome, and in one church in Ireland. </p>
+        </div>
       </div>
     </div>
   
     <div id="viewDiv"></div>
-    <div id = "pinkmap"></div>
+    
   </body>
 </html>
